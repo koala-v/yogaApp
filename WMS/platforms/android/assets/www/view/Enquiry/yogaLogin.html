@@ -1,0 +1,19 @@
+<ion-view title="yogaLogin">
+  <ion-header-bar class="bar-positive" align-title="center">
+      <button class="button button-icon icon ion-android-arrow-back" ng-click="returnLogin()"></button>
+      <div class="h1 title">{{Detail.YogaLoginTitle}}</div>
+      </ion-header-bar>
+    <ion-pane class="login">
+        <div class="list list-inset" style="margin-top:5em;">
+            <label class="item item-input">
+                <i class="icon ion-android-person placeholder-icon"></i>&nbsp;&nbsp;
+                <input type="text" id="iUserName" placeholder="请输入您的手机号" required  style="border: 0px;">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-android-lock placeholder-icon"></i>&nbsp;&nbsp;
+                <input type="password" id="iPassword" placeholder="请输入您的密码" required style="border: 0px;">
+            </label>
+            <button class="button button-block button-positive" ng-click="YogaLogin()" >登录</button>
+        </div>
+	</ion-pane>
+</ion-view>

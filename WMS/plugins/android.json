@@ -1,0 +1,89 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.sysmagic.tc55"
+        }
+    }
+}
