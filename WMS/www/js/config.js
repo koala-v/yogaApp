@@ -1,12 +1,12 @@
 'use strict';
 var appConfig = angular.module('WMSAPP.config',[]);
 appConfig.constant('ENV', {
-    website:      'www.sysfreight.net/app/wms/onhand',
-    //  api:          'www.sysfreight.net/apis/wms/onhand',
+    website:      'www.sysfreight.net/app/tms/yoga',
+    //  api:          'www.sysfreight.net/apis/tms/yoga',
     api:        'localhost:2354',
     reset:  {
-        website:      'www.sysfreight.net/app/wms/onhand',
-        api:          'www.sysfreight.net/apis/wms/onhand',
+        website:      'www.sysfreight.net/app/tms/yoga',
+        api:          'www.sysfreight.net/apis/tms/yoga',
         port:         '8081'
     },
     ssl:          false, // 0 : false, 1 : true

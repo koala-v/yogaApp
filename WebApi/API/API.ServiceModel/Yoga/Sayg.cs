@@ -12,12 +12,15 @@ namespace WebApi.ServiceModel.Yoga
 {
     [Route("/Yoga/Sayg1/Comfirm", "Post")] //
     [Route("/Yoga/Sayg1/Check", "Get")]   // PhoneNumber= ? Or UserName = ?, PassWord= ?
+    [Route("/Yoga/Sayg1/AreaCode", "Get")]
+    [Route("/Yoga/Sayg1/YogaStudioName", "Get")]
     public class Sayg : IReturn<CommonResponse> 
     {
         public string PhoneNumber { get; set; }
         public string PassWord { get; set; }
         public string UpdateAllString { get; set; }
-
+        public string AreaCode { get; set; }
+        public string YogaStudioName { get; set; }
     }
     public class Sayg__Logic
     {
@@ -39,6 +42,56 @@ namespace WebApi.ServiceModel.Yoga
                     }
 
                 }
+            }
+            catch { throw; }
+            return Result;
+
+        }
+        public List<Sayg1> Get_areaCodeFiled_List(Sayg request)
+        {
+        List<Sayg1> Result = null;
+            try
+            {
+                using (var db = DbConnectionFactory.OpenDbConnection("Yoga"))
+                {
+
+                    if (!string.IsNullOrEmpty(request.AreaCode))
+                    {
+                        if (!string.IsNullOrEmpty(request.AreaCode))
+                        {
+                            string strSQL = "Select  distinct  AreaCode  From sayg1 Where AreaCode LIKE '" + request.AreaCode + "%' Order By AreaCode  Asc";
+                            Result = db.Select<Sayg1>(strSQL);
+                        }
+
+                    }
+
+                }
+
+            }
+            catch { throw; }
+            return Result;
+
+        }
+        public List<Sayg1> Get_YogaStudioNameFiled_List(Sayg request)
+        {
+            List<Sayg1> Result = null;
+            try
+            {
+                using (var db = DbConnectionFactory.OpenDbConnection("Yoga"))
+                {
+
+                    if (!string.IsNullOrEmpty(request.YogaStudioName))
+                    {
+                        if (!string.IsNullOrEmpty(request.YogaStudioName))
+                        {
+                            string strSQL = "Select  * From sayg1 Where YogaStudioName LIKE '" + request.YogaStudioName + "%' Order By YogaStudioName  Asc";
+                            Result = db.Select<Sayg1>(strSQL);
+                        }
+
+                    }
+
+                }
+
             }
             catch { throw; }
             return Result;

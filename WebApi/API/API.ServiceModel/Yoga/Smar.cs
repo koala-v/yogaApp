@@ -59,26 +59,35 @@ namespace WebApi.ServiceModel.Yoga
                         {
                             for (int i = 0; i < ja.Count(); i++)
                             {
-                                string PhoneNumber = ja[i]["PhoneNumber"].ToString();
-                                string Address = ja[i]["Address"].ToString();
-                                string PassWord = ja[i]["PassWord"].ToString();
-                                string Email = ja[i]["Email"].ToString();
-                                string YogaStudioNo = ja[i]["YogaStudioNo"].ToString();
+                                string strSql = "";
+                                string PhoneNumber = ja[i]["PhoneNumber"].ToString();                        
+                               string PassWord = ja[i]["PassWord"].ToString();                           
+                                string YogaStudioName = ja[i]["YogaStudioName"].ToString();
                                 string Sex = ja[i]["Sex"].ToString();
-                                string UserName = ja[i]["UserName"].ToString();
+                                string Remark = ja[i]["Remark"].ToString();
                                 string AreaCode = ja[i]["AreaCode"].ToString();
-                                db.Insert(new Samr1
-                                {
-                                    PhoneNumber = Modfunction.SQLSafeValue(PhoneNumber),
-                                    Address = Modfunction.SQLSafeValue(Address),
-                                    PassWord = Modfunction.SQLSafeValue(PassWord),
-                                    Email = Modfunction.SQLSafeValue(Email),
-                                    YogaStudioNo = Modfunction.SQLSafeValue(YogaStudioNo),
-                                    Sex = Modfunction.SQLSafeValue(Sex),
-                                    UserName = Modfunction.SQLSafeValue(UserName),
-                                     AreaCode = Modfunction.SQLSafeValue(AreaCode)
 
-                                });
+                                strSql = "insert into Samr1( " +              
+                 "   YogaStudioName," +      
+                 "   AreaCode," +           
+                 "   Sex," +
+                 "   Remark ," +
+                 "   PhoneNumber ," +
+                 "   PassWord ," +
+                 "   CreateDateTime," +
+                 "   UpdateDateTime" +
+                 "  )" +
+                     "values( " +      
+                     Modfunction.SQLSafeValue(YogaStudioName) + "," +
+                     Modfunction.SQLSafeValue(AreaCode) + "," +
+                     Modfunction.SQLSafeValue(Sex) + "," +
+                     Modfunction.SQLSafeValue(Remark) + "," +
+                     Modfunction.SQLSafeValue(PhoneNumber) + "," +
+                     Modfunction.SQLSafeValue(PassWord) + "," +
+                     "GETDATE()," +
+                     "GETDATE()" +
+                     ") ";
+                                db.ExecuteSql(strSql);
 
 
 

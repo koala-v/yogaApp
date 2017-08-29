@@ -11,7 +11,7 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">瑜伽馆名字</span>
-                                <input type="text" id=""  placeholder="请输入瑜伽馆名字" style="padding-right: 14px;">
+                                <input type="text" id=""  ng-model="Detail.YogaStudioName"  placeholder="请输入瑜伽馆名字" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
@@ -19,7 +19,15 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">馆主名字</span>
-                                <input type="text" id=""  placeholder="请输入馆主名字" style="padding-right: 14px;">
+                                <input type="text" id="" ng-model="Detail.Name"  placeholder="请输入馆主名字" style="padding-right: 14px;">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="padding:0px;">
+                            <label class="item item-input">
+                                <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">所在城市</span>
+                                <input type="text" id=""   ng-model="Detail.AreaCode"  placeholder="请输入瑜伽馆的所在城市" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
@@ -27,21 +35,30 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">瑜伽馆地址</span>
-                                <input type="text" id=""  placeholder="请输入瑜伽馆地址" style="padding-right: 14px;">
+                                <input type="text" id="" ng-model="Detail.Address" placeholder="请输入瑜伽馆地址" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">营业执照</span>
                                 <input type="text" id=""  placeholder="请输入营业执照编号" style="padding-right: 14px;">
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-80">
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;上传营业执照</p>
+                        </div>
+                        <div class="col">
+                            <button class="button icon ion-camera" style="overflow:visible;border-width:1px; float:right" ng-click="showActionSheet()">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-80">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;上传身份证</p>
                         </div>
                         <div class="col">
                             <button class="button icon ion-camera" style="overflow:visible;border-width:1px; float:right" ng-click="showActionSheet()">
@@ -54,10 +71,10 @@
                                 <div class="input-label">
                                     性别
                                 </div>
-                                <select ng-model="Detail.Trucker">
+                                <select ng-model="Detail.Sex">
                                     <option value=""></option>
-                                    <option value="Fedex">男</option>
-                                    <option value="Others">女</option>
+                                    <option value="Man">男</option>
+                                    <option value="WoMan">女</option>
                                 </select>
                             </div>
                         </div>
@@ -66,7 +83,7 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">备注</span>
-                                <input type="text" id=""  placeholder="请输入备注信息" style="padding-right: 14px;">
+                                <input type="text" id="" ng-model="Detail.Remark"  placeholder="请输入备注信息" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
@@ -74,7 +91,7 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">手机号码</span>
-                                <input type="text" id=""  placeholder="请输入手机号码" style="padding-right: 14px;">
+                                <input type="text" id="" ng-model="Detail.PhoneNumber" placeholder="请输入手机号码" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
@@ -91,7 +108,7 @@
                         <div class="col" style="padding:0px;">
                             <label class="item item-input">
                                 <span class="input-label" style="padding-top:2px; padding-bottom: 2px;">密码</span>
-                                <input type="text" id=""  placeholder="请输入密码" style="padding-right: 14px;">
+                                <input type="text" id=""  ng-model="Detail.PassWord" placeholder="请输入密码" style="padding-right: 14px;">
                             </label>
                         </div>
                     </div>
@@ -101,7 +118,7 @@
     </ion-content>
     <ion-footer-bar class="bar-positive hide-on-keyboard-open">
         <div class="button-bar">
-            <button class="button icon ion-android-done" ng-click="checkConfirm()">
+            <button class="button icon ion-android-done" ng-click="Confirm()">
                 &nbsp;确认
             </button>
             <button class="button icon ion-arrow-return-right" ng-click="returnList()">

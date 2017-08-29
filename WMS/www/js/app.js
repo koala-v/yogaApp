@@ -328,6 +328,12 @@ app.config( [ '$httpProvider', '$stateProvider', '$urlRouterProvider', '$ionicCo
                 templateUrl: 'view/Putaway/detail.html',
                 controller: 'GrPutawayDetailCtrl'
             } )
+            .state( 'GrSmarManageMentDetail', {
+                url: '/putaway/SmarManageMent',
+                cache: 'false',
+                templateUrl: 'view/Putaway/ManageMent.html',
+                controller: 'GrSmarManageMentDetailCtrl'
+            } )
             .state( 'EnquiryDetail', {
                 url: '/Enquiry/yogaLogin/:FlagID',
                 cache: 'false',

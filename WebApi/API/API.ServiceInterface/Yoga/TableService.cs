@@ -44,6 +44,17 @@ namespace WebApi.ServiceInterface.Yoga
                 {
                     ecr.data.results = sayg_logic.LoginCheck(request);
                 }
+                else if (uri.IndexOf("/Yoga/Sayg1/AreaCode") > 0)
+                {
+                    ecr.data.results = sayg_logic.Get_areaCodeFiled_List(request);
+                }
+                else if (uri.IndexOf("Yoga/Sayg1/YogaStudioName") > 0)
+                {
+                    ecr.data.results = sayg_logic.Get_YogaStudioNameFiled_List(request);
+                }
+                
+
+
                 ecr.meta.code = 200;
                 ecr.meta.message = "OK";
             }

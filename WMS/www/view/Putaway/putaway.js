@@ -34,11 +34,60 @@ appControllers.controller('PutawayListCtrl', [
                     reload: true
                 });
         };
+        $scope.func_smarManageMent = function () {
+                $state.go('GrSmarManageMentDetail', {
+                }, {
+                    reload: true
+                });
+        };
 
     }
 ]);
 
 appControllers.controller('GrPutawayDetailCtrl', [
+    'ENV',
+    '$scope',
+    '$stateParams',
+    '$state',
+    '$http',
+    '$timeout',
+    '$ionicHistory',
+    '$ionicLoading',
+    '$ionicPopup',
+    '$ionicModal',
+    '$cordovaKeyboard',
+    '$cordovaToast',
+    '$cordovaBarcodeScanner',
+    'SqlService',
+    'ApiService',
+    'PopupService',
+    function (
+        ENV,
+        $scope,
+        $stateParams,
+        $state,
+        $http,
+        $timeout,
+        $ionicHistory,
+        $ionicLoading,
+        $ionicPopup,
+        $ionicModal,
+        $cordovaKeyboard,
+        $cordovaToast,
+        $cordovaBarcodeScanner,
+        SqlService,
+        ApiService,
+        PopupService) {
+        var popup = null;
+        $scope.returnBack = function () {
+            $state.go('putawayList', {}, {
+                reload: true
+            });
+        };
+    }
+]);
+
+appControllers.controller('GrSmarManageMentDetailCtrl', [
     'ENV',
     '$scope',
     '$stateParams',
