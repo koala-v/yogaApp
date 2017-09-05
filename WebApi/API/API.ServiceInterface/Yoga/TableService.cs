@@ -141,7 +141,7 @@ namespace WebApi.ServiceInterface.Yoga
         {
             if (auth.AuthResult(token, uri))
             {
-                if (uri.IndexOf("/Yoga/tjms2/attach") > 0)
+                if (uri.IndexOf("/Yoga/slide/attach") > 0)
                 {
                     ecr.data.results = logic.Get_tjms1_Attach_List(request);
                 }

@@ -14,7 +14,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace WebApi.ServiceModel.Yoga
 {
     [Route("/Yoga/csbk1/doc", "Get")]                // doc?JobNo=
-    [Route("/Yoga/tjms2/attach", "Get")]	// attach? Key= & TableName=
+    [Route("/Yoga/slide/attach", "Get")]	// attach? Key= & TableName=
     public  class DownLoadImg : IReturn<CommonResponse>
     {
         public string Key  { get; set; }
