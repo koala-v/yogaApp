@@ -1,27 +1,37 @@
 <ion-view title="Main">
     <ion-nav-buttons>
-        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+        <button class="button button-icon icon ion-ios-person-outline" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button icon-left  button-positive" ng-click="func_Enquiry()">登录</button>
+        <button class="button icon-left  button-positive" ng-click="">/</button>
+        <button class="button icon-right   button-positive" ng-click="func_GR()">注册</button>
     </ion-nav-buttons>
     <ion-nav-title>
-  &nbsp;   &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  瑜伽助手
     </ion-nav-title>
     <ion-pane>
         <!-- <div style="height:30px"></div> -->
         <div class="box">
             <div class="top" style="height:150px">
-              <!-- start 轮播图-->
-              <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
-                <ion-slide>
-                  <div class="box banner"><img ng-src='{{signature1}}' /> </div>
-                </ion-slide>
-                <ion-slide>
-                  <div class="box banner"><img ng-src='{{signature2}}' /></div>
-                </ion-slide>
-                <ion-slide on-slide-changed="slideHasChanged(index)">
-                  <div class="box banner"><img ng-src='{{signature3}}' /></div>
-                </ion-slide>
-              </ion-slide-box>
-              <!-- end 轮播图-->
+                <!-- start 轮播图-->
+                <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
+                    <ion-slide>
+                        <div>
+                            <img src="./img/yoga2.png" width="350px;" height="150px;">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div>
+                            <img src="./img/yoga1.png" width="350px;" height="150px;">
+                        </div>
+                    </ion-slide>
+                    <ion-slide>
+                        <div>
+                            <img src="./img/yoga3.png" width="350px;" height="150px;">
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>
+                <!-- end 轮播图-->
 
                 <!-- <div class="left flex-b" style="background-color: rgba(251,148,11,0.9);">
                     <button class="button button-icon button-large icon ion-home sudoku-btn flex-b-item" ng-click="func_Enquiry()">
@@ -62,7 +72,7 @@
                     </button>
                 </div>
             </div>
-             <div class="bottom" style="height:100px">
+            <div class="bottom" style="height:100px">
                 <!-- <div class="left flex-b" style="background-color: rgba(20,80,252,0.9);">
                     <button class="button button-icon button-large  icon ion-android-more-horizontal sudoku-btn flex-b-item" ng-click="func_CycleCount()">
                         <p>期待更多......</p>
@@ -71,4 +81,33 @@
             </div> -
         </div>
     </ion-pane>
+
+    <ion-tabs class="tabs-positive tabs-icon-only">
+
+    <ion-tab title="首页" icon-on="ion-ios-home-outline" icon-off="ion-ios-home-outline">
+      <!-- 标签 1 内容 -->
+首页
+    </ion-tab>
+
+    <ion-tab title="行业信息" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <!-- 标签 2 内容 -->
+行业信息
+    </ion-tab>
+
+    <ion-tab title="我的瑜伽" icon-on="ion-ios-plus-outline" icon-off="ion-ios-plus-outline">
+      <!-- 标签 3 内容 -->
+我的瑜伽
+    </ion-tab>
+
+    <ion-tab title="文章信息" icon-on="icon ion-document-text" icon-off="ion-document-text">
+      <!-- 标签 4 内容 -->
+文章信息
+    </ion-tab>
+    <ion-tab title="推送信息" icon-on="ion-volume-high" icon-off="ion-volume-high">
+      <!-- 标签 5 内容 -->
+推送信息
+    </ion-tab>
+  </ion-tabs>
+
+</body>
 </ion-view>

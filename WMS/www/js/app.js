@@ -24,6 +24,7 @@ app.run( [
     '$cordovaFile',
     'SqlService',
     'PopupService',
+    'ApiService',
     'TABLE_DB',
     function (
         ENV,
@@ -40,12 +41,14 @@ app.run( [
         $cordovaFile,
         SqlService,
         PopupService,
+        ApiService,
         TABLE_DB ) {
         if ( window.cordova ) {
             ENV.fromWeb = false;
         } else {
             ENV.fromWeb = true;
         }
+
         $ionicPlatform.ready( function () {
             if ( !ENV.fromWeb ) {
                 $cordovaKeyboard.hideAccessoryBar( true );
@@ -57,48 +60,9 @@ app.run( [
             }
             SqlService.Init().then(function(res){
                 console.log('DB initialized');
-                SqlService.Drop( 'Imgr2_Receipt' ).then( function ( res ) {
-                    SqlService.Create( 'Imgr2_Receipt', TABLE_DB.Imgr2_Receipt ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgr2_Putaway' ).then( function ( res ) {
-                    SqlService.Create( 'Imgr2_Putaway', TABLE_DB.Imgr2_Putaway ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgr2_PutawayScan' ).then( function ( res ) {
-                    SqlService.Create( 'Imgr2_PutawayScan', TABLE_DB.Imgr2_Putaway ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgr2_Transfer' ).then( function ( res ) {
-                    SqlService.Create( 'Imgr2_Transfer', TABLE_DB.Imgr2_Transfer ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgi2_Picking' ).then( function ( res ) {
-                    SqlService.Create( 'Imgi2_Picking', TABLE_DB.Imgi2_Picking ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgi2_Verify' ).then( function ( res ) {
-                    SqlService.Create( 'Imgi2_Verify', TABLE_DB.Imgi2_Verify ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imgi3_Picking' ).then( function ( res ) {
-                    SqlService.Create( 'Imgi3_Picking', TABLE_DB.Imgi3_Picking ).then( function ( res ) {
-
-                    } );
-                } );
-                SqlService.Drop( 'Imcc2_CycleCount' ).then( function ( res ) {
-                    SqlService.Create( 'Imcc2_CycleCount', TABLE_DB.Imcc2_CycleCount ).then( function ( res ) {
-
-                    } );
-                } );
 
             });
+
         } );
         $ionicPlatform.registerBackButtonAction( function ( e ) {
             if ($cordovaKeyboard.isVisible()) {
@@ -151,6 +115,7 @@ app.run( [
             e.preventDefault();
             return false;
         }, 101 );
+
 } ] );
 
 app.config( [ '$httpProvider', '$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',
@@ -159,6 +124,7 @@ app.config( [ '$httpProvider', '$stateProvider', '$urlRouterProvider', '$ionicCo
         $ionicConfigProvider.platform.ios.tabs.position( 'top' );
         $ionicConfigProvider.platform.android.tabs.style( 'standard' );
         $ionicConfigProvider.platform.android.tabs.position( 'top' )
+         $ionicConfigProvider.tabs.position('bottom');
             /*
             $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
             $ionicConfigProvider.platform.android.navBar.alignTitle('center');

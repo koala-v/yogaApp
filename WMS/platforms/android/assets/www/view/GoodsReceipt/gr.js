@@ -4,6 +4,7 @@ appControllers.controller('GrListCtrl', [
     '$stateParams',
     '$state',
     '$cordovaKeyboard',
+    '$interval',
     'ionicDatePicker',
     'ApiService',
     'PopupService',
@@ -13,9 +14,28 @@ appControllers.controller('GrListCtrl', [
         $stateParams,
         $state,
         $cordovaKeyboard,
+        $interval,
         ionicDatePicker,
         ApiService,
         PopupService) {
+        $scope.canClick = false;
+        $scope.description = "获取验证码";
+        var second = 59;
+        var timerHandler;
+        $scope.getTestCode = function () {
+            timerHandler = $interval(function () {
+                if (second <= 0) {
+                    $interval.cancel(timerHandler);
+                    second = 59;
+                    $scope.description = "获取验证码";
+                    $scope.canClick = false;
+                } else {
+                    $scope.description = second + "s后重发";
+                    second--;
+                    $scope.canClick = true;
+                }
+            }, 1000)
+        };
         $scope.returnMain = function () {
             $state.go('index.main', {}, {
                 reload: true
@@ -107,8 +127,8 @@ appControllers.controller('GrDetailCtrl', [
         };
 
         $scope.Confirm = function () {
-      $scope.Detail.  YogaStudioName=  $scope.Sayg1s_YogaStudioName[0].YogaStudioName;
-      $scope.Detail.   AreaCode=     $scope.Sayg1s_YogaStudioName[0].AreaCode;
+            $scope.Detail.YogaStudioName = $scope.Sayg1s_YogaStudioName[0].YogaStudioName;
+            $scope.Detail.AreaCode = $scope.Sayg1s_YogaStudioName[0].AreaCode;
             if ($scope.Detail.Sex === 'Man') {
                 $scope.Detail.Sex = '男';
             } else if ($scope.Detail.Sex === 'WoMan') {

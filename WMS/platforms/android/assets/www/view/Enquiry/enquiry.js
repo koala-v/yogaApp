@@ -20,6 +20,75 @@ appControllers.controller('EnquiryListCtrl', [
         ionicDatePicker,
         ApiService,
         PopupService) {
+
+          $scope.user = {
+           username: "",
+           password:  "",
+           isChecked: false,
+           phone: '',
+           vercode:''
+       };
+       $scope.$on('$stateChangeSuccess', function () {
+          //  if (Storage.get("loginInfo") !== null) {
+          //      $scope.user.username = Storage.get("loginInfo").username;
+          //      $scope.user.password = Storage.get("loginInfo").password;
+          //      $scope.user.isChecked = Storage.get("loginInfo").isChecked;
+          //  }
+          //  else {
+          //      $scope.user.username = "";
+          //      $scope.user.password = "";
+          //      $scope.user.isChecked = false;
+          //  }
+       });
+
+       //登录
+       $scope.signIn = function () {
+
+           userFactory.login($scope.user.username, $scope.user.password);
+       };
+
+       $scope.$on('User.loginUpdated', function () {
+           console.log("User.loginUpdated");
+           var userRel = userFactory.getCurrentUser();
+           console.log(userRel);
+           if (userRel.status != "1") {//登陆失败
+               $ionicLoading.show({
+                   noBackdrop: true,
+                   template: userRel.msg,
+                   duration: 1500
+               });
+           } else {
+               if ($scope.user.isChecked) {
+                   Storage.set("loginInfo", $scope.user);
+               } else {
+                   Storage.remove("loginInfo");
+               }
+               $state.go('app.user');  //路由跳转
+
+           }
+       });
+
+       //登录切换
+       $scope.isloginModel = true;
+       $scope.isgeneralCss = "sub_button_select";
+       $scope.isfastCss = "";
+       $scope.changeModel = function (lm) {
+
+           if (lm === 0) {
+               $scope.isgeneralCss = "sub_button_select";
+               $scope.isloginModel = true;
+               $scope.isfastCss = "";
+           }
+           if (lm === 1) {
+
+               $scope.isgeneralCss = "";
+               $scope.isfastCss = "sub_button_select";
+               $scope.isloginModel = false;
+           }
+       };
+       $scope.registerclick = function () {
+           $state.go("register");
+       };
         $scope.returnMain = function () {
             $state.go('index.main', {
 

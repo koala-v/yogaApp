@@ -407,44 +407,6 @@ appControllers.controller('MainCtrl', [
             });
         };
 
-        var getSignature1 = function () {
-            var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
-            objUri.addSearch('Key', 'YogaSilde1');
-            objUri.addSearch('LineItemNo', '1');
-            objUri.addSearch('TableName', 'Yoga');
-            ApiService.Get(objUri, true).then(function success(result) {
-                if (is.not.undefined(result.data.results)) {
-                    $scope.signature1 = 'data:image/png;base64,' + result.data.results;
-                }
-            });
-        };
 
-        var getSignature2 = function () {
-            var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
-            objUri.addSearch('Key', 'YogaSilde2');
-            objUri.addSearch('LineItemNo', '2');
-            objUri.addSearch('TableName', 'Yoga');
-            ApiService.Get(objUri, true).then(function success(result) {
-                if (is.not.undefined(result.data.results)) {
-                    $scope.signature2 = 'data:image/png;base64,' + result.data.results;
-                }
-            });
-        };
-
-        var getSignature3 = function () {
-            var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
-            objUri.addSearch('Key', 'YogaSilde3');
-            objUri.addSearch('LineItemNo', '3');
-            objUri.addSearch('TableName', 'Yoga');
-            ApiService.Get(objUri, true).then(function success(result) {
-                if (is.not.undefined(result.data.results)) {
-                    $scope.signature3 = 'data:image/png;base64,' + result.data.results;
-                }
-            });
-        };
-
-        getSignature1();
-        getSignature2();
-        getSignature3();
     }
 ]);

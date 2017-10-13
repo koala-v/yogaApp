@@ -3,12 +3,48 @@
         <button class="button button-icon icon ion-android-arrow-back" ng-click="returnMain()"></button>
         <div class="h1 title">注册</div>
     </ion-header-bar>
-    <ion-content style="margin-top:1px;">
-        <div class="list card">
+    <ion-content class="text-center register-content">
+           <div class="card">
+                <form name="registerForm" novalidate>
+                  <label class="item  item-input">
+                        <span class="input-label">手机号</span>
+                     <input type="number" placeholder="请输入11位手机号" name="number" required ng-minlength="11" ng-maxlength="11" ng-model="user.number">
+                    </label>
+                  <label class="item item-input">
+                       <span class="input-label">输入密码</span>
+                       <input type="password" placeholder="6-30位数字或字母" name="password" required ng-pattern="/[a-zA-Z0-9]/" ng-maxlength="30" ng-minlength="6" ng-model="user.password">
+                   </label>
+                   <label class="item item-input">
+                      <span class="input-label">确认密码</span>
+                       <input type="password" placeholder="再次输入密码" name="password2" required ng-model="password2">
+                  </label>
+                 <div class="item item-input">
+                     <span class="input-label col-25">验证码</span>
+                     <input type="text" name="testcode" required ng-model="user.testcode">
+                      <button  class="button gettestcode col-40" ng-click="getTestCode()" ng-bind="description" ng-disabled="canClick">
+                      </button>
+                 </div>
+               </form>
+           </div>
+               <span class="usererr assertive" ng-show="registerForm.number.$dirty && registerForm.number.$invalid">手机号输入有误</span>
+               <span class="usererr assertive" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">密码输入格式有误</span>
+          <span class="usererr assertive" ng-show="registerForm.password2.$dirty && user.password!=password2">两次密码输入不一致</span>
+          <label class="useragree">
+             <input type="checkbox" name="useragree" ng-checked="true">
+             <span> 同意<a href="javascript:;">奥尚格用户协议</a></span>
+           </label>
+           </ion-radio>
+           <br/>
+           <button class="button btn-load" ui-sref="tabs.mypage" style="700px" ng-disabled="registerForm.$invalid">注册</button>
+  <br><br>
+     </ion-content>
+
+    <!-- <ion-content style="margin-top:1px;">   -->
+        <!-- <div class="list card">
             <div class="list list-inset">
                 <button class="button button-block button-positive" ng-click="GoToDetail(1)">会员</button>
                 <button class="button button-block button-positive" ng-click="GoToDetail(2)">瑜伽馆主</button>
             </div>
-        </div>
-    </ion-content>
+        </div> -->
+    <!-- </ion-content> -->
 </ion-view>

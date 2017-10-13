@@ -3,7 +3,70 @@
         <button class="button button-icon icon ion-android-arrow-back" ng-click="returnMain()"></button>
         <div class="h1 title">登录</div>
     </ion-header-bar>
-    <ion-content style="margin-top:1px;">
+    <ion-view view-title="登录" hide-nav-bar="true">
+        <div class="bar bar-header  bar-positive ">
+            <h1 class="title">登录</h1>
+            <button class="button button-clear" ng-click="registerclick()">注册</button>
+        </div>
+        <div class="bar bar-subheader">
+            <ion-scroll direction="x" scrollbar-x="false" overflow-scroll="true" style="overflow: hidden">
+                <div class="button-bar sub_header_list">
+                    <a class="button button-clear {{isgeneralCss}}" ng-click="changeModel(0)">普通登录</a>
+                    <a class="button button-clear {{isfastCss}}" ng-click="changeModel(1)">快捷登录</a>
+                </div>
+            </ion-scroll>
+        </div>
+        <ion-content class="has-subheader">
+
+            <form name="myForm" ng-show="isloginModel" ng-submit="signIn()">
+                <div class="list list-inset removePM">
+                    <label class="item item-input">
+                        <span class="input-label ion-android-people">&nbsp;&nbsp;用户名</span>
+                        <input type="text" name="txtUserName" placeholder="请输入用户名" ng-model="user.username" required>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label ion-android-lock">&nbsp;&nbsp;密码</span>
+                        <input type="password" name="txtPwd" placeholder="请输入密码" ng-model="user.password" required>
+                    </label>
+                </div>
+                <div class="row list-borderless">
+                    <div class="col col-67"><ion-checkbox ng-model="user.isChecked">是否记住密码</ion-checkbox> </div>
+                    <div class="col col-center"><a href="#">忘记密码？</a></div>
+                </div>
+
+                <div class="padding">
+                    <button class="button button-block button-positive" type="submit" ng-disabled=" myForm.txtUserName.$invalid || myForm.txtPwd.$invalid">
+                        <b>登&nbsp;&nbsp;录</b>
+                    </button>
+                </div>
+            </form>
+
+            <form name="myfastForm" ng-show="!isloginModel" ng-submit="signIn()">
+                <div class="list list-inset removePM">
+                    <label class="item item-input">
+                        <span class="input-label ion-android-people">&nbsp;&nbsp;手机号</span>
+                        <input type="text" name="txtphone" placeholder="请输入手机号" ng-model="user.phone" required>
+                    </label>
+                    <label class="item  item-input">
+                        <span class="input-label ion-android-lock">&nbsp;&nbsp;验证码</span>
+                        <input type="text" name="txtvercode" style="flex:120px;" placeholder="请输入验证码" ng-model="user.vercode" required>
+                        <button class="button" style="font-size:12px; color:red;">获取验证码</button>
+                    </label>
+                </div>
+
+                <div class="padding">
+                    <button class="button button-block button-positive"  ng-disabled="myfastForm.txtphone.$invalid || myfastForm.txtvercode.$invalid">
+                        <b>登&nbsp;&nbsp;录</b>
+                    </button>
+                </div>
+                <div class="padding com">
+                    <span class="positive">点击登录表明你已同意并阅读<a style="color:red; " href="#">《快捷登录条款》</a></span>
+                </div>
+            </form>
+        </ion-content>
+    </ion-view>
+
+    <!-- <ion-content style="margin-top:1px;">
         <div class="list card">
             <div class="list list-inset">
                 <button class="button button-block button-positive" ng-click="GoToDetail(1)">管理员</button>
@@ -11,5 +74,5 @@
                 <button class="button button-block button-positive" ng-click="GoToDetail(3)">会员</button>
             </div>
         </div>
-    </ion-content>
+    </ion-content> -->
 </ion-view>
