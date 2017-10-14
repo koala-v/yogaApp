@@ -2,22 +2,12 @@
     <ion-header-bar class="bar-positive" align-title="center">
         <button class="button button-icon icon ion-android-arrow-back" ng-click="returnMain()"></button>
         <div class="h1 title">登录</div>
+            <button class="button button-clear" ng-click="func_GR()">注册</button>
     </ion-header-bar>
     <ion-view view-title="登录" hide-nav-bar="true">
-        <div class="bar bar-header  bar-positive ">
-            <h1 class="title">登录</h1>
-            <button class="button button-clear" ng-click="registerclick()">注册</button>
-        </div>
-        <div class="bar bar-subheader">
-            <ion-scroll direction="x" scrollbar-x="false" overflow-scroll="true" style="overflow: hidden">
-                <div class="button-bar sub_header_list">
-                    <a class="button button-clear {{isgeneralCss}}" ng-click="changeModel(0)">普通登录</a>
-                    <a class="button button-clear {{isfastCss}}" ng-click="changeModel(1)">快捷登录</a>
-                </div>
-            </ion-scroll>
-        </div>
-        <ion-content class="has-subheader">
+      <ion-pane class="has-header">
 
+          <div style="height: 43px;"></div>
             <form name="myForm" ng-show="isloginModel" ng-submit="signIn()">
                 <div class="list list-inset removePM">
                     <label class="item item-input">
@@ -40,30 +30,7 @@
                     </button>
                 </div>
             </form>
-
-            <form name="myfastForm" ng-show="!isloginModel" ng-submit="signIn()">
-                <div class="list list-inset removePM">
-                    <label class="item item-input">
-                        <span class="input-label ion-android-people">&nbsp;&nbsp;手机号</span>
-                        <input type="text" name="txtphone" placeholder="请输入手机号" ng-model="user.phone" required>
-                    </label>
-                    <label class="item  item-input">
-                        <span class="input-label ion-android-lock">&nbsp;&nbsp;验证码</span>
-                        <input type="text" name="txtvercode" style="flex:120px;" placeholder="请输入验证码" ng-model="user.vercode" required>
-                        <button class="button" style="font-size:12px; color:red;">获取验证码</button>
-                    </label>
-                </div>
-
-                <div class="padding">
-                    <button class="button button-block button-positive"  ng-disabled="myfastForm.txtphone.$invalid || myfastForm.txtvercode.$invalid">
-                        <b>登&nbsp;&nbsp;录</b>
-                    </button>
-                </div>
-                <div class="padding com">
-                    <span class="positive">点击登录表明你已同意并阅读<a style="color:red; " href="#">《快捷登录条款》</a></span>
-                </div>
-            </form>
-        </ion-content>
+</ion-pane>
     </ion-view>
 
     <!-- <ion-content style="margin-top:1px;">

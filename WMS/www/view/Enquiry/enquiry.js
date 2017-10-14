@@ -20,7 +20,11 @@ appControllers.controller('EnquiryListCtrl', [
         ionicDatePicker,
         ApiService,
         PopupService) {
-
+          $scope.func_GR = function () {
+              $state.go('grList', {}, {
+                  reload: true
+              });
+          };
           $scope.user = {
            username: "",
            password:  "",

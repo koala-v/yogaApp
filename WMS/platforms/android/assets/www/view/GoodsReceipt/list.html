@@ -35,7 +35,12 @@
            </label>
            </ion-radio>
            <br/>
-           <button class="button btn-load" ui-sref="tabs.mypage" style="700px" ng-disabled="registerForm.$invalid">注册</button>
+        <div>
+           <button class="button button-block button-positive" type="submit" ng-disabled=" myForm.txtUserName.$invalid || myForm.txtPwd.$invalid">
+               <b>注&nbsp;&nbsp;册</b>
+           </button>
+       </div>
+           <!-- <button class="button btn-load" ui-sref="tabs.mypage" style="700px" ng-disabled="registerForm.$invalid">注册</button> -->
   <br><br>
      </ion-content>
 

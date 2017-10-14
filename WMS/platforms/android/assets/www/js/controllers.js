@@ -47,6 +47,12 @@ appControllers.controller('IndexCtrl', [
                 reload: true
             });
         };
+
+        $scope.func_Enquiry = function () {
+            $state.go('enquiryList', {}, {
+                reload: true
+            });
+};
         $scope.gotoUpdate = function () {
             if (!ENV.fromWeb) {
                 $http.get(ApiService.Url(ApiService.Uri(false, '/' + ENV.updateFile)))

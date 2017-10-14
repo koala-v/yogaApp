@@ -1,11 +1,11 @@
 <ion-view title="Main">
-    <ion-nav-buttons>
-        <button class="button button-icon icon ion-ios-person-outline" menu-toggle="left"></button>
+    <ion-nav-buttons >
+        <button class="button  button-icon icon ion-ios-person-outline" menu-toggle="left"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <button class="button icon-left  button-positive" ng-click="func_Enquiry()">登录</button>
+        <!-- <button class="button icon-left  button-positive" ng-click="func_Enquiry()">登录</button>
         <button class="button icon-left  button-positive" ng-click="">/</button>
-        <button class="button icon-right   button-positive" ng-click="func_GR()">注册</button>
+        <button class="button icon-right   button-positive" ng-click="func_GR()">注册</button> -->
     </ion-nav-buttons>
     <ion-nav-title>
     </ion-nav-title>
@@ -17,7 +17,7 @@
                 <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
                     <ion-slide>
                         <div>
-                            <img src="./img/yoga2.png" width="350px;" height="150px;">
+                            <img src="./img/1333.png" width="350px;" height="150px;">
                         </div>
                     </ion-slide>
                     <ion-slide>
@@ -47,13 +47,12 @@
             <div class="middle">
                 <div class="left flex-b" style="background-color: rgba(77,204,245,1);">
                     <button class="button button-icon button-large icon ion-ios-body sudoku-btn flex-b-item" ng-click="func_Putaway()">
-                        <p>我的瑜伽</p>
-
+                        <p>约课</p>
                     </button>
                 </div>
                 <div class="right flex-b" style="background-color: rgba(244,100,109,1);">
-                    <button class="button button-icon button-large icon ion-videocamera sudoku-btn flex-b-item" ng-click="func_GT()">
-                        <p>瑜伽视频</p>
+                    <button class="button button-icon button-large icon ion-android-walk sudoku-btn flex-b-item" ng-click="func_GT()">
+                        <p>跑课</p>
 
                     </button>
                 </div>
@@ -61,13 +60,13 @@
             <div class="bottom">
                 <div class="left flex-b" style="background-color: rgba(88,209,44,1);">
                     <button class="button button-icon button-large icon ion-document-text sudoku-btn flex-b-item" ng-click="func_Picking()">
-                        <p>文章</p>
+                        <p>瑜伽心语</p>
 
                     </button>
                 </div>
                 <div class="right flex-b" style="background-color: rgba(29,120,252,0.9);">
                     <button class="button button-icon button-large icon ion-chatbubble-working sudoku-btn flex-b-item" ng-click="func_Vgin()">
-                        <p>瑜伽大会</p>
+                        <p>瑜伽快讯</p>
 
                     </button>
                 </div>
@@ -82,32 +81,34 @@
         </div>
     </ion-pane>
 
-    <ion-tabs class="tabs-positive tabs-icon-only">
+    <ion-tabs class="tabs-icon-top ">
 
-    <ion-tab title="首页" icon-on="ion-ios-home-outline" icon-off="ion-ios-home-outline">
-      <!-- 标签 1 内容 -->
-首页
-    </ion-tab>
+        <!-- <ion-tabs class="tabs-positive tabs-icon-only"> -->
+        <!-- <ion-tabs class="tabs-icon-top tabs-color-active-positive" > -->
+        <ion-tab title="首页" icon-on="ion-ios-home-outline" icon-off="ion-ios-home-outline">
+            <!-- 标签 1 内容 -->
+            首页
+        </ion-tab>
 
-    <ion-tab title="行业信息" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-      <!-- 标签 2 内容 -->
-行业信息
-    </ion-tab>
+        <ion-tab title="附近" icon-on="ion-ios-location-outline" icon-off="ion-ios-location-outline">
+            <!-- 标签 2 内容 -->
+            附近的瑜伽馆
+        </ion-tab>
 
-    <ion-tab title="我的瑜伽" icon-on="ion-ios-plus-outline" icon-off="ion-ios-plus-outline">
-      <!-- 标签 3 内容 -->
-我的瑜伽
-    </ion-tab>
+        <ion-tab title="瑜乐圈" icon-on="ion-ios-plus" icon-off="ion-ios-plus">
+            <!-- 标签 3 内容 -->
+            瑜乐圈
+        </ion-tab>
 
-    <ion-tab title="文章信息" icon-on="icon ion-document-text" icon-off="ion-document-text">
-      <!-- 标签 4 内容 -->
-文章信息
-    </ion-tab>
-    <ion-tab title="推送信息" icon-on="ion-volume-high" icon-off="ion-volume-high">
-      <!-- 标签 5 内容 -->
-推送信息
-    </ion-tab>
-  </ion-tabs>
+        <ion-tab title="瑜课堂" icon-on="ion-ios-book-outline" icon-off="ion-ios-book-outline">
+            <!-- 标签 4 内容 -->
+            视频教学
+        </ion-tab>
+        <ion-tab title="信息" icon-on="ion-ios-volume-high" icon-off="ion-ios-volume-high">
+            <!-- 标签 5 内容 -->
 
-</body>
+        </ion-tab>
+    </ion-tabs>
+
+    </body>
 </ion-view>
