@@ -1,5 +1,5 @@
 <ion-view title="Main">
-    <ion-nav-buttons >
+    <ion-nav-buttons>
         <button class="button  button-icon icon ion-ios-person-outline" menu-toggle="left"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
@@ -17,17 +17,19 @@
                 <ion-slide-box auto-play="true" does-continue="true" slide-interval=2000>
                     <ion-slide>
                         <div>
-                            <img src="./img/1333.png" width="350px;" height="150px;">
+                            <img src={{signature1}} width="350px;" height="150px;">
+                            <!-- <img src="http://quickpoo.oss-cn-hangzhou.aliyuncs.com/image/2017/07/06/c6e8ca480d60a319e6a08f1194316558.jpeg"  width="350px;" height="150px;"> -->
                         </div>
                     </ion-slide>
                     <ion-slide>
                         <div>
-                            <img src="./img/yoga1.png" width="350px;" height="150px;">
+                            <img src={{signature2}} width="350px;" height="150px;">
+                            <!-- <img src="http://quickpoo.oss-cn-hangzhou.aliyuncs.com/image/2017/07/06/c6e8ca480d60a319e6a08f1194316558.jpeg" width="350px;" height="150px;"> -->
                         </div>
                     </ion-slide>
                     <ion-slide>
                         <div>
-                            <img src="./img/yoga3.png" width="350px;" height="150px;">
+                            <img src={{signature3}} width="350px;" height="150px;">
                         </div>
                     </ion-slide>
                 </ion-slide-box>
@@ -72,11 +74,34 @@
                 </div>
             </div>
             <div class="bottom" style="height:100px">
-                <!-- <div class="left flex-b" style="background-color: rgba(20,80,252,0.9);">
-                    <button class="button button-icon button-large  icon ion-android-more-horizontal sudoku-btn flex-b-item" ng-click="func_CycleCount()">
-                        <p>期待更多......</p>
-                    </button>
+                <div class="left flex-b" style="">
+                    <img src="http://quickpoo.oss-cn-hangzhou.aliyuncs.com/image/2017/07/06/c6e8ca480d60a319e6a08f1194316558.jpeg" width="300px;" height="100px;">
+
+                    <!-- <div class="row row-center" id="">
+                      <div class="col col-67" style="text-align:center;">
+                          2017年10月14日，重庆第五届YOGIC国际瑜伽大会第二日，经历了昨日初见，本以为自己是老司机了，却发现今天的一切熟悉中又有所不同。
+                      </div>
+                      <div class="col col-33">
+                        <div>
+                            <img src="./img/1333.png" width="350px;" height="150px;">
+                        </div>
+                      </div>
+                  </div> -->
+                    <!-- <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-thumbsup"></i>点赞(330)
+                    </a>
+                    <a class="tab-item" href="#/tab/postMsg">
+                        <i class="icon ion-chatbox"></i>评论(300)
+                    </a>
+                    <a class="tab-item" href="#/tab/giveup">
+                        <i class="icon ion-sad"></i>举报(1)
+                    </a>
                 </div> -->
+                    <!-- <button class="button button-icon button-large  icon ion-android-more-horizontal sudoku-btn flex-b-item" ng-click="func_CycleCount()">
+                        <p>期待更多......</p>
+                    </button> -->
+                </div>
             </div> -
         </div>
     </ion-pane>

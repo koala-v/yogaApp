@@ -157,7 +157,7 @@ appControllers.controller('SplashCtrl', [
         $state,
         $timeout) {
         $timeout(function () {
-            $state.go('index.login', {}, {
+            $state.go('index.main', {}, {
                 reload: true
             });
         }, 2000);
@@ -365,12 +365,41 @@ appControllers.controller('MainCtrl', [
     '$scope',
     '$state',
     '$ionicPopup',
+    '$ionicPlatform',
     'ApiService',
     function (
         $scope,
         $state,
         $ionicPopup,
+        $ionicPlatform,
         ApiService) {
+          $ionicPlatform.ready(function () {
+            var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
+                      objUri.addSearch('Key', 'Slide1');
+                      objUri.addSearch('TableName', 'Slide1');
+                      ApiService.Get(objUri, true).then(function success(result) {
+                          if (is.not.undefined(result.data.results)) {
+                              $scope.signature1 = 'data:image/png;base64,' +result.data.results;
+                          }
+                      });
+                      var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
+                                objUri.addSearch('Key', 'Slide2');
+                                objUri.addSearch('TableName', 'Slide1');
+                                ApiService.Get(objUri, true).then(function success(result) {
+                                    if (is.not.undefined(result.data.results)) {
+                                        $scope.signature2 = 'data:image/png;base64,' +result.data.results;
+                                    }
+                                });
+                                var objUri = ApiService.Uri(true, '/api/Yoga/slide/attach');
+                                          objUri.addSearch('Key', 'Slide3');
+                                          objUri.addSearch('TableName', 'Slide1');
+                                          ApiService.Get(objUri, true).then(function success(result) {
+                                              if (is.not.undefined(result.data.results)) {
+                                                  $scope.signature3 = 'data:image/png;base64,' +result.data.results;
+                                              }
+                                          });
+
+          } );
         $scope.func_Enquiry = function () {
             $state.go('enquiryList', {}, {
                 reload: true
@@ -412,7 +441,5 @@ appControllers.controller('MainCtrl', [
                 reload: true
             });
         };
-
-
     }
 ]);

@@ -13,6 +13,7 @@ app.run( [
     'ENV',
     '$ionicPlatform',
     '$rootScope',
+    '$cordovaSplashscreen',
     '$state',
     '$location',
     '$timeout',
@@ -30,6 +31,7 @@ app.run( [
         ENV,
         $ionicPlatform,
         $rootScope,
+        $cordovaSplashscreen,
         $state,
         $location,
         $timeout,
@@ -50,9 +52,12 @@ app.run( [
         }
 
         $ionicPlatform.ready( function () {
+
             if ( !ENV.fromWeb ) {
                 $cordovaKeyboard.hideAccessoryBar( true );
                 $cordovaKeyboard.disableScroll( true );
+                  // $cordovaSplashscreen.hide();
+                  navigator.splashscreen.hide();
             }
             if ( window.StatusBar ) {
                 // org.apache.cordova.statusbar required

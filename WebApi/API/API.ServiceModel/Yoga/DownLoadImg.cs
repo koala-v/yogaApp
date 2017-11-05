@@ -110,8 +110,8 @@ namespace WebApi.ServiceModel.Yoga
                     }
                 }
                 string strSignature = "";
-                strSignature = request.Key+"_"+request.LineItemNo+ ".png";
-                strPath = DocumentPath + "\\" + request.TableName + "\\" + request.Key + "\\" + strSignature;
+                strSignature = request.Key+ ".png";
+                strPath = DocumentPath + "\\"  + request.TableName + "\\" + strSignature;
                 if (File.Exists(strPath))
                 {
                     using (FileStream fsRead = new FileStream(strPath, FileMode.Open))
